@@ -21,6 +21,7 @@ import {
 import { setNextRoundLength } from '../commands/set-next-round-length.js'
 import { setRoundReward } from '../commands/set-round-reward.js'
 import { tick } from '../commands/tick.js'
+import { availableBalance } from '../commands/available-balance.js'
 
 const pkg = JSON.parse(
   await fs.readFile(
@@ -118,6 +119,12 @@ yargs(hideBin(process.argv))
     'Trigger a tick',
     yargs => yargs,
     tick
+  )
+  .command(
+    'available-balance',
+    'Get the balance available',
+    yargs => yargs,
+    availableBalance
   )
   .demandCommand()
   .version(`${pkg.name}: ${pkg.version}`)

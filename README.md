@@ -42,6 +42,7 @@ Commands:
   meridian set-next-round-length <blocks>   Set the next round length
   meridian set-round-reward <reward>        Set the round reward
   meridian tick                             Trigger a tick
+  meridian available-balance                Get the balance available
 
 Options:
   -a, --address     Contract address (or $MERIDIAN_ADDRESS)  [string] [required]
