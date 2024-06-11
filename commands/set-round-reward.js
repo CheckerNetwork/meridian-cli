@@ -6,6 +6,7 @@ export const setRoundReward = async ({ reward, ...opts }) => {
   console.log(`setting round reward to ${ethers.formatEther(reward)} FIL`)
   console.log(`current value: ${ethers.formatEther(await contract.roundReward())} FIL`)
 
+  console.error('Please sign on your ledger...')
   const tx = await contractWithSigner.setRoundReward(reward)
   console.log(tx.hash)
   console.log('Awaiting confirmation...')
