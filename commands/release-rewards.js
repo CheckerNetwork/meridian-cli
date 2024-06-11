@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url'
 
 export const releaseRewards = async opts => {
   const { contractWithSigner } = await createContract(opts)
+  console.error('Please sign on your ledger...')
   const tx = await contractWithSigner.releaseRewards()
   console.log(tx.hash)
   console.log('Awaiting confirmation...')

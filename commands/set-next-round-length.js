@@ -5,6 +5,7 @@ export const setNextRoundLength = async ({ blocks, ...opts }) => {
   console.log(`setting next round length to ${blocks} blocks`)
   console.log(`current value: ${await contract.nextRoundLength()} blocks`)
 
+  console.error('Please sign on your ledger...')
   const tx = await contractWithSigner.setNextRoundLength(blocks)
   console.log(tx.hash)
   console.log('Awaiting confirmation...')
