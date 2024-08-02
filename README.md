@@ -53,3 +53,10 @@ Options:
 Examples:
   $ meridian current-round-index  Get the current round index
 ```
+## Development
+
+Publish a new version:
+
+```bash
+$ npx np
+```
