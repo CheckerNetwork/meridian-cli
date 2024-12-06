@@ -1,6 +1,7 @@
 import { createContract } from '../index.js'
 import { relative, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import pRetry from 'p-retry'
 
 export const releaseRewards = async opts => {
   const { contractWithSigner } = await createContract(opts)
@@ -8,7 +9,7 @@ export const releaseRewards = async opts => {
   const tx = await contractWithSigner.releaseRewards()
   console.log(tx.hash)
   console.log('Awaiting confirmation...')
-  await tx.wait()
+  await pRetry(() => tx.wait())
   console.log('Rewards released')
 
   const bin = relative(
