@@ -22,6 +22,7 @@ import { setNextRoundLength } from '../commands/set-next-round-length.js'
 import { setRoundReward } from '../commands/set-round-reward.js'
 import { tick } from '../commands/tick.js'
 import { availableBalance } from '../commands/available-balance.js'
+import { addAdmin } from '../commands/add-admin.js'
 
 const pkg = JSON.parse(
   await fs.readFile(
@@ -125,6 +126,12 @@ yargs(hideBin(process.argv))
     'Get the balance available',
     yargs => yargs,
     availableBalance
+  )
+  .command(
+    'add-admin <admin>',
+    'Add a contract admin',
+    yargs => yargs.positional('admin', { type: 'string' }),
+    addAdmin
   )
   .demandCommand()
   .version(`${pkg.name}: ${pkg.version}`)
