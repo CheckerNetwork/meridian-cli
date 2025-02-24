@@ -23,6 +23,7 @@ import { setRoundReward } from '../commands/set-round-reward.js'
 import { tick } from '../commands/tick.js'
 import { availableBalance } from '../commands/available-balance.js'
 import { addAdmin } from '../commands/add-admin.js'
+import { removeAdmin } from '../commands/remove-admin.js'
 
 const pkg = JSON.parse(
   await fs.readFile(
@@ -132,6 +133,12 @@ yargs(hideBin(process.argv))
     'Add a contract admin',
     yargs => yargs.positional('admin', { type: 'string' }),
     addAdmin
+  )
+  .command(
+    'remove-admin <admin>',
+    'Remove a contract admin',
+    yargs => yargs.positional('admin', { type: 'string' }),
+    removeAdmin
   )
   .demandCommand()
   .version(`${pkg.name}: ${pkg.version}`)
