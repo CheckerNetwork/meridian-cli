@@ -44,6 +44,7 @@ Commands:
   meridian tick                             Trigger a tick
   meridian available-balance                Get the balance available
   meridian add-admin <admin>                Add a contract admin
+  meridian remove-admin <admin>             Remove a contract admin
 
 Options:
   -a, --address     Contract address (or $MERIDIAN_ADDRESS)  [string] [required]
