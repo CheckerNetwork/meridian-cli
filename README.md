@@ -43,6 +43,7 @@ Commands:
   meridian set-round-reward <reward>        Set the round reward
   meridian tick                             Trigger a tick
   meridian available-balance                Get the balance available
+  meridian add-admin <admin>                Add a contract admin
 
 Options:
   -a, --address     Contract address (or $MERIDIAN_ADDRESS)  [string] [required]
